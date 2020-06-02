@@ -18,5 +18,6 @@ class DailyRecord(models.Model):
                               on_delete=models.CASCADE,
                               related_name="records",)
     quantity = models.PositiveIntegerField(null=True, blank=True)
+    recorded_on = models.DateField(auto_now=True)
     class Meta:
-        unique_together = ['habit', 'quantity']
+        unique_together = ['habit', 'recorded_on']
