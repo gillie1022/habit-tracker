@@ -8,13 +8,15 @@ class Habit(models.Model):
     user = models.ForeignKey(to=User,
                              on_delete=models.CASCADE,
                              related_name="habits")
-    # verb
-    # noun
-    # goal_quantity
+    verb = models.CharField(max_length=255, null=True, blank=True)
+    goal_quantity = models.PositiveIntegerField(null=True, blank=True)
+    noun = models.CharField(max_length=255, null=True, blank=True)
 
 
 class DailyRecord(models.Model):
     habit = models.ForeignKey(to=Habit,
                               on_delete=models.CASCADE,
-                              related_name="records")
-    # quantity
+                              related_name="records",)
+    quantity = models.PositiveIntegerField(null=True, blank=True)
+    class Meta:
+        unique_together = ['habit', 'quantity']
