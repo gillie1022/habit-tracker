@@ -19,6 +19,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts', include('registrations.backends.simple.urls')),
 ]
 
 if settings.DEBUG:

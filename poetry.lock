@@ -354,8 +354,16 @@ optional = false
 python-versions = "*"
 version = "1.11.2"
 
+[[package]]
+category = "dev"
+description = "A formatter for Python code."
+name = "yapf"
+optional = false
+python-versions = "*"
+version = "0.30.0"
+
 [metadata]
-content-hash = "e636105306709b36df968433d98171ab1c5a41e7da104b9f772bfff8f74f566f"
+content-hash = "af4503169e8ee8768f7c54e833edb3cf8a409ebbcdbd2dad19d36a44545f7358"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -528,4 +536,8 @@ werkzeug = [
 ]
 wrapt = [
     {file = "wrapt-1.11.2.tar.gz", hash = "sha256:565a021fd19419476b9362b05eeaa094178de64f8361e44468f9e9d7843901e1"},
+]
+yapf = [
+    {file = "yapf-0.30.0-py2.py3-none-any.whl", hash = "sha256:3abf61ba67cf603069710d30acbc88cfe565d907e16ad81429ae90ce9651e0c9"},
+    {file = "yapf-0.30.0.tar.gz", hash = "sha256:3000abee4c28daebad55da6c85f3cd07b8062ce48e2e9943c8da1b9667d48427"},
 ]
