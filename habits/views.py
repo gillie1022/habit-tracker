@@ -15,6 +15,6 @@ def list_habits(request):
     return render(request, "habits/list_habits.html", {"habits": habits})
 
 @login_required
-def habit_detail(request, habit_pk):
+def show_habit(request, habit_pk):
     habit = get_object_or_404(request.user.habits, pk=habit_pk)
-    return render(request, "habits/habit_detail.html", {"habit": habit})
+    return render(request, "habits/show_habit.html", {"habit": habit})
