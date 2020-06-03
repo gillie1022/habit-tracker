@@ -21,7 +21,8 @@ from habits import views as habits_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('',habits_views.list_habits, name='list_habits')
+    path('', habits_views.homepage, name='homepage'),
+    path('habits/', habits_views.list_habits, name='list_habits'),
 ]
 
 if settings.DEBUG:
