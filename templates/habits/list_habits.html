@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Habits</h1>
+<h2>Habits</h2>
 
-<p>here is going to be an add habit button</p>
+<ul>
+    {% for habit in user.habits.all %}
+        <li><a href="{% url 'show_habit' habit_pk=habit.pk %}">{{ habit }}</a></li>
+    {% endfor %}
+</ul>
 
 <div>
-    for loop for each habit
+<a href="{% url 'add_habit' %}">Add a Habit</a>    
 </div>
 
 {% endblock %}

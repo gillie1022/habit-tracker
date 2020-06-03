@@ -23,6 +23,7 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('', habits_views.homepage, name='homepage'),
     path('habits/', habits_views.list_habits, name='list_habits'),
+    path('habits/add/', habits_views.add_habit, name='add_habit'),
 ]
 
 if settings.DEBUG:
