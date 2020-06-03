@@ -13,3 +13,8 @@ def homepage(request):
 def list_habits(request):
     habits = request.user.habits.all()
     return render(request, "habits/list_habits.html", {"habits": habits})
+
+@login_required
+def habit_detail(request, habit_pk):
+    habit = get_object_or_404(request.user.habits, pk=habit_pk)
+    return render(request, "habits/habit_detail.html", {"habit": habit})
