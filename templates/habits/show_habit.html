@@ -2,5 +2,9 @@
 
 {% block content %}
 
-
+<div>
+    <p>
+        <a href="{% url 'delete_habit' habit_pk=habit.pk %}">Delete Habit</a>
+    </p>
+</div>
 {% endblock %}
