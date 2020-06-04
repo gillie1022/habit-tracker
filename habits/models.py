@@ -8,10 +8,12 @@ class Habit(models.Model):
     user = models.ForeignKey(to=User,
                              on_delete=models.CASCADE,
                              related_name="habits")
-    verb = models.CharField(max_length=255, null=True, blank=True)
+    action = models.CharField(max_length=255, null=True, blank=True)
     goal_quantity = models.PositiveIntegerField(null=True, blank=True)
-    noun = models.CharField(max_length=255, null=True, blank=True)
+    unit_of_measure = models.CharField(max_length=255, null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.action} {self.goal_quantity} {self.unit_of_measure} per day"
 
 class DailyRecord(models.Model):
     habit = models.ForeignKey(to=Habit,

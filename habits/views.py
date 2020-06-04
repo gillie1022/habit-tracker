@@ -27,7 +27,7 @@ def add_habit(request):
             habit = form.save(commit=False)
             habit.user = request.user
             habit.save()
-            return redirect(to='show_habit', habit_pk=habit.pk)
+            return redirect(to='list_habits')
     else:
         form = HabitForm()
 

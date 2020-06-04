@@ -6,7 +6,7 @@ class HabitForm(forms.ModelForm):
     class Meta:
         model = Habit
         fields = [
-            'verb',
+            'action',
             'goal_quantity',
-            'noun',
+            'unit_of_measure',
         ]
