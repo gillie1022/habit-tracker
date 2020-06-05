@@ -10,3 +10,10 @@ class HabitForm(forms.ModelForm):
             'goal_quantity',
             'unit_of_measure',
         ]
+
+class RecordForm(forms.ModelForm):
+    class Meta:
+        model = DailyRecord
+        fields = [
+            'quantity',
+        ]

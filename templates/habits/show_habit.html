@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<h2>{{ habit }}</h2>
+<ul>
+    {% for record in habit.records.all %}
+    <li>{{ record }}</li>
+    {% endfor %}
+</ul>
+<div>
+    <p>
+        <a href="{% url 'add_record' habit_pk=habit.pk %}">Add Record</a>
+    </p>
+</div>
 <div>
     <p>
         <a href="{% url 'delete_habit' habit_pk=habit.pk %}">Delete Habit</a>
