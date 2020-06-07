@@ -18,7 +18,8 @@ def list_habits(request):
 @login_required
 def show_habit(request, habit_pk):
     habit = get_object_or_404(request.user.habits, pk=habit_pk)
-    return render(request, "habits/show_habit.html", {"habit": habit})
+    record_form = RecordForm()
+    return render(request, "habits/show_habit.html", {"habit": habit, "record_form": record_form,})
 
 @login_required
 def add_habit(request):

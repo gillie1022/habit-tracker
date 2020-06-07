@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'js/habit.js' %}"></script>
+{% endblock %}
 
 {% block content %}
 <h2>{{ habit }}</h2>
@@ -9,8 +14,13 @@
 </ul>
 <div>
     <p>
-        <a href="{% url 'add_record' habit_pk=habit.pk %}">Add Record</a>
+        <a  id="show_habit_form" href="{% url 'add_record' habit_pk=habit.pk %}" id="record_button">Add Record</a>
     </p>
+    <form class="dn" id="record_form" action="{% url 'add_record' habit_pk=habit.pk %}" method="POST">
+        {% csrf_token %}
+        {{ record_form.as_p }}
+        <div><button type="submit">Add Record</button></div>
+    </form>
 </div>
 <div>
     <p>
