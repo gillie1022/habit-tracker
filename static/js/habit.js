@@ -3,4 +3,5 @@ document
   .addEventListener("click", (event) => {
     event.preventDefault();
     document.querySelector("#record_form").classList.remove("dn");
+    document.querySelector("#id_quantity").focus()
   });
