@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block scripts %}
-<script src="{% static 'js/habit.js' %}" defer></script>
+<script src="{% static 'js/habit.js' defer %}" ></script>
 {% endblock %}
 
 {% block content %}
@@ -14,9 +14,9 @@
 </ul>
 <div>
     <p>
-        <a  id="show_habit_form" href="{% url 'add_record' habit_pk=habit.pk %}" id="record_button">Add Record</a>
+        <a  id="show-habit-form" href="{% url 'add_record' habit_pk=habit.pk %}">Add Record</a>
     </p>
-    <form class="dn" id="record_form" action="{% url 'add_record' habit_pk=habit.pk %}" method="POST">
+    <form class="dn" id="record-form" action="{% url 'add_record' habit_pk=habit.pk %}" method="POST">
         {% csrf_token %}
         {{ record_form.as_p }}
         <div><button type="submit">Add Record</button></div>
