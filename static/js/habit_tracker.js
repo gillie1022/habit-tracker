@@ -3,3 +3,5 @@ document.querySelector("#show-record-form").addEventListener("click", (event) =>
     document.querySelector("#show-record-form").classList.add("dn")
     document.querySelector("#id_quantity").focus()
 })
+
+// document.querySelector("#id_recorded_on").setAttribute("type", "date")

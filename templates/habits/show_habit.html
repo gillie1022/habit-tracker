@@ -7,9 +7,9 @@
 
 {% block content %}
 <h2>{{ habit }}</h2>
-<ul>
+<ul id="habit-list">
     {% for record in habit.records.all %}
-    <li>{{ record }}</li>
+    <li id="li {{record.quantity}}">{{ record }}</li>
     {% endfor %}
 </ul>
 <div>
