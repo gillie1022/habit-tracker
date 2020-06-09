@@ -49,7 +49,7 @@ def add_record(request, habit_pk):
     habit = get_object_or_404(request.user.habits, pk=habit_pk)
     record = habit.records.filter(recorded_on=date.today()).first()
     if request.method == "POST":
-        form = RecordForm(data=request.POST, instance=record)
+        form = RecordForm(data=request.POST, instance=record, initial={'quanity': record.quantity})
         if form.is_valid():
             record = form.save(commit=False)
             record.habit = habit
@@ -72,6 +72,6 @@ def edit_record(request, habit_pk, record_year, record_month, record_day):
             record.save()
             return redirect(to='show_habit', habit_pk=habit.pk)
     else:
-        form = RecordForm(instance=record)
+        form = RecordForm(instance=record, initial={'quantity': record.quantity})
     
     return render(request, "habits/edit_record.html", {"form": form, "habit": habit, "record": record})

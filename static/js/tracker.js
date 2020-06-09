@@ -7,11 +7,12 @@ document
     document.querySelector("#id_quantity").focus();
   });
 
-records = document.querySelectorAll(".record");
-let i = 1;
-for (let record of records) {
-  record.addEventListener("click", (event) => {
-    event.preventDefault();
-    record.parentElement.nextElementSibling.classList.remove("dn");
-  });
-}
+// records = document.querySelectorAll(".record");
+// let i = 1;
+// for (let record of records) {
+//   record.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     record.parentElement.nextElementSibling.classList.remove("dn");
+//     document.querySelector("#id_quantity").focus();
+//   });
+// }

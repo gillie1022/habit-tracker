@@ -26,3 +26,7 @@ class DailyRecord(models.Model):
 
     def __str__(self):
         return f"{self.recorded_on}: {self.quantity}"
+
+    def get_quantity(self):
+        quantity = self.quantity
+        return int(quantity)
