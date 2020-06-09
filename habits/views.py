@@ -61,9 +61,9 @@ def add_record(request, habit_pk):
     return render(request, "habits/add_record.html", {"form": form, "habit": habit, "record": record})
 
 @login_required
-def edit_record(request, habit_pk, year, month, day):
+def edit_record(request, habit_pk, record_year, record_month, record_day):
     habit = get_object_or_404(request.user.habits, pk=habit_pk)
-    record = habit.records.filter(recorded_on=date(year, month, day)).first()
+    record = habit.records.filter(recorded_on=date(record_year, record_month, record_day)).first()
     if request.method == "POST":
         form = RecordForm(data=request.POST, instance=record)
         if form.is_valid():

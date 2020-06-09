@@ -1,35 +1,52 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block scripts %}
+{% extends "base.html" %} {% load static %} {% block scripts %}
 <script src="{% static 'js/tracker.js' %}" defer></script>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <h2>{{ habit }}</h2>
 <ul id="record-list">
-    {% for record in habit.records.all %}
-    <li id="li {{ record }}"><a href="{% url 'edit_record' habit_pk=habit.pk year=2020 month=6 day=5 %}">{{ record }}</a></li>
-    {% endfor %}
+  {% for record in habit.records.all %}
+  <div>
+      <li id="{{ record }}" >
+      <a
+      href="{% url 'edit_record' habit_pk=habit.pk record_year=record.recorded_on.year record_month=record.recorded_on.month record_day=record.recorded_on.day %}"
+      class="record">{{ record }}</a
+      >
+    </li>
+    <form
+      class="dn show-edit-record"
+      id="edit-record-form {{record.recorded_on}}"
+      action="{% url 'edit_record' habit_pk=habit.pk record_year=record.recorded_on.year record_month=record.recorded_on.month record_day=record.recorded_on.day %}"
+      method="POST"
+    >
+      {% csrf_token %} {{ record_form.as_p }}
+      <div><button type="submit">Add Record</button></div>
+    </form>
+  </div>
+  {% endfor %}
 </ul>
 <div>
-    <p>
-        <a  id="show-record-form" href="{% url 'add_record' habit_pk=habit.pk %}">Add Record</a>
-    </p>
-    <form class="dn" id="record-form" action="{% url 'add_record' habit_pk=habit.pk %}" method="POST">
-        {% csrf_token %}
-        {{ record_form.as_p }}
-        <div><button type="submit">Add Record</button></div>
-    </form>
+  <p>
+    <a id="show-record-form" href="{% url 'add_record' habit_pk=habit.pk %}"
+      >Add Record</a
+    >
+  </p>
+  <form
+    class="dn"
+    id="record-form"
+    action="{% url 'add_record' habit_pk=habit.pk %}"
+    method="POST"
+  >
+    {% csrf_token %} {{ record_form.as_p }}
+    <div><button type="submit">Add Record</button></div>
+  </form>
 </div>
 <div>
-    <p>
-        <a href="{% url 'delete_habit' habit_pk=habit.pk %}">Delete Habit</a>
-    </p>
+  <p>
+    <a href="{% url 'delete_habit' habit_pk=habit.pk %}">Delete Habit</a>
+  </p>
 </div>
 <div>
-    <p>
-        <a href="{% url 'list_habits' %}">Return to Habit List</a>
-    </p>
+  <p>
+    <a href="{% url 'list_habits' %}">Return to Habit List</a>
+  </p>
 </div>
 {% endblock %}

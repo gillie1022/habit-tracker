@@ -1,7 +1,17 @@
-document.querySelector("#show-record-form").addEventListener("click", (event) => {event.preventDefault();
+document
+  .querySelector("#show-record-form")
+  .addEventListener("click", (event) => {
+    event.preventDefault();
     document.querySelector("#record-form").classList.remove("dn");
-    document.querySelector("#show-record-form").classList.add("dn")
-    document.querySelector("#id_quantity").focus()
-})
+    document.querySelector("#show-record-form").classList.add("dn");
+    document.querySelector("#id_quantity").focus();
+  });
 
-document.querySelector("#id_recorded_on").setAttribute("type", "date")
+records = document.querySelectorAll(".record");
+let i = 1;
+for (let record of records) {
+  record.addEventListener("click", (event) => {
+    event.preventDefault();
+    record.parentElement.nextElementSibling.classList.remove("dn");
+  });
+}

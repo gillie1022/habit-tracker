@@ -4,7 +4,7 @@
 
 <h2>Edit Record</h2>
 
-<form action="{% url 'edit_record' habit_pk=habit.pk year month day %}" method="POST">
+<form action="{% url 'edit_record' habit_pk=habit.pk record_year=record.recorded_on.year record_month=record.recorded_on.month record_day=record.recorded_on.day %}" method="POST">
     {% csrf_token %}
     {{ form }}
     <div>

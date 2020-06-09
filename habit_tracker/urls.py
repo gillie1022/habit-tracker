@@ -27,7 +27,7 @@ urlpatterns = [
     path('habits/add/', habits_views.add_habit, name='add_habit'),
     path('habits/<int:habit_pk>/delete/', habits_views.delete_habit, name='delete_habit'),
     path('habits/<int:habit_pk>/add_record/', habits_views.add_record, name='add_record'),
-    path('habits/<int:habit_pk>/<int:year>/<int:month>/<int:day>/edit_record/', habits_views.edit_record, name="edit_record")
+    path('habits/<int:habit_pk>/<int:record_year>/<int:record_month>/<int:record_day>/edit_record/', habits_views.edit_record, name="edit_record")
 ]
 
 if settings.DEBUG:
