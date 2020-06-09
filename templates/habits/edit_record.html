@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Edit Record</h2>
+
+<form action="{% url 'edit_record' habit_pk=habit.pk year month day %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <div>
+        <button type="submit">Save Changes</button>
+    </div>
+</form>
+
+{% endblock %}

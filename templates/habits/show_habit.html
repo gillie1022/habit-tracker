@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block scripts %}
-<script src="{% static 'js/habit_tracker.js' %}" defer></script>
+<script src="{% static 'js/tracker.js' %}" defer></script>
 {% endblock %}
 
 {% block content %}
 <h2>{{ habit }}</h2>
-<ul id="habit-list">
+<ul id="record-list">
     {% for record in habit.records.all %}
-    <li id="li {{record.quantity}}">{{ record }}</li>
+    <li id="li {{ record }}"><a href="{% url 'edit_record' habit_pk=habit.pk year=2020 month=6 day=5 %}">{{ record }}</a></li>
     {% endfor %}
 </ul>
 <div>

@@ -4,4 +4,4 @@ document.querySelector("#show-record-form").addEventListener("click", (event) =>
     document.querySelector("#id_quantity").focus()
 })
 
-// document.querySelector("#id_recorded_on").setAttribute("type", "date")
+document.querySelector("#id_recorded_on").setAttribute("type", "date")
