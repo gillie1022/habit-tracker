@@ -9,9 +9,9 @@
     <title>{% block title %}Habit Tracker{% endblock %}</title>
 </head>
 <body>
-    <div class="mh5">
+    <div class="mh5 ph5">
         <header>
-            <h1><a href="{% url 'homepage' %}">Habit Tracker</a> </h1>
+            <h1 ><a href="{% url 'homepage' %}" class="no-underline">Habit Tracker</a> </h1>
             {% if user.is_authenticated %}
             <div>
                 Hello, {{user.username}}!
