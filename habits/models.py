@@ -19,7 +19,7 @@ class Habit(models.Model):
 
 
     def get_last_21_days(self):
-        record_list = list(self.records.values('recorded_on', 'quantity'))
+        record_list = list(self.records.order_by('recorded_on').values('recorded_on', 'quantity'))
         if len(record_list) > 0:
             start_date = record_list[0]['recorded_on']
         else:

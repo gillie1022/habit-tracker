@@ -3,9 +3,9 @@
 {% block content %}
 <h2>Daily Habits</h2>
 
-<div class="habit-card">
+<div id="deck" class="flex flex-wrap">
     {% for habit in habits %}
-        <div class="habit-title"><a href="{% url 'show_habit' habit_pk=habit.pk %}">{{ habit }}</a></div>
+        <div class="habit-card w-third"><a href="{% url 'show_habit' habit_pk=habit.pk %}">{{ habit }}</a></div>
     {% endfor %}
 </div>
 
