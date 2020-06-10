@@ -6,6 +6,7 @@
 
 <form action="{% url 'edit_record' habit_pk=habit.pk record_year=record.recorded_on.year record_month=record.recorded_on.month record_day=record.recorded_on.day %}" method="POST">
     {% csrf_token %}
+    {{ record.recorded_on }}:  {{record.quantity}}<br/>
     {{ form }}
     <div>
         <button type="submit">Save Changes</button>

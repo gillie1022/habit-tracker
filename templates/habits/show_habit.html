@@ -8,12 +8,12 @@
       <li id="{{ record }}" >
       <a
       href="{% url 'edit_record' habit_pk=habit.pk record_year=record.recorded_on.year record_month=record.recorded_on.month record_day=record.recorded_on.day %}"
-      class="record">{{ record }}</a
+      class="record">{{ record.recorded_on }}:  {{record.quantity}}</a
       >
     </li>
     <form
       class="dn show-edit-record"
-      id="edit-record-form {{record.recorded_on}}"
+      placeholder="{{record.quantity}}"
       action="{% url 'edit_record' habit_pk=habit.pk record_year=record.recorded_on.year record_month=record.recorded_on.month record_day=record.recorded_on.day %}"
       method="POST"
     >
