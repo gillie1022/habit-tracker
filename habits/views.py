@@ -72,6 +72,6 @@ def edit_record(request, habit_pk, record_year, record_month, record_day):
             record.save()
             return redirect(to='show_habit', habit_pk=habit.pk)
     else:
-        form = RecordForm(instance=record, initial={'quantity': record.quantity})
+        form = RecordForm(instance=record)
     
     return render(request, "habits/edit_record.html", {"form": form, "habit": habit, "record": record})

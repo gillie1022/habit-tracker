@@ -3,11 +3,11 @@
 {% block content %}
 <h2>Daily Habits</h2>
 
-<ul>
+<div class="habit-card">
     {% for habit in habits %}
-        <li><a href="{% url 'show_habit' habit_pk=habit.pk %}">{{ habit }}</a></li>
+        <div class="habit-title"><a href="{% url 'show_habit' habit_pk=habit.pk %}">{{ habit }}</a></div>
     {% endfor %}
-</ul>
+</div>
 
 <div>
 <a href="{% url 'add_habit' %}">Add a Habit</a>    
