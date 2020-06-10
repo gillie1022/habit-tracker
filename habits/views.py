@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import HabitForm, RecordForm
-from datetime import datetime, date
+from datetime import date, datetime
 
 # Create your views here.
 def homepage(request):
@@ -49,7 +49,7 @@ def add_record(request, habit_pk):
     habit = get_object_or_404(request.user.habits, pk=habit_pk)
     record = habit.records.filter(recorded_on=date.today()).first()
     if request.method == "POST":
-        form = RecordForm(data=request.POST, instance=record, initial={'quanity': record.quantity})
+        form = RecordForm(data=request.POST, instance=record)
         if form.is_valid():
             record = form.save(commit=False)
             record.habit = habit
