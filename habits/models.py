@@ -20,7 +20,10 @@ class Habit(models.Model):
 
     def get_last_21_days(self):
         record_list = list(self.records.values('recorded_on', 'quantity'))
-        start_date = record_list[0]['recorded_on']
+        if len(record_list) > 0:
+            start_date = record_list[0]['recorded_on']
+        else:
+            start_date = date.today()
         days = []
         if len(days) == 21:
             start_date = date.today() - datetime.timedelta(days=21)
