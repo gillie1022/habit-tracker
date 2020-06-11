@@ -1,0 +1,49 @@
+body{
+    margin: 1em 10%;
+}
+
+.header{
+    display: flex;
+    padding: 0em 1%;
+    font-size: 2vw;
+}
+
+.page-title{
+    padding: 0em 1%;
+    font-size: 2vw;
+}
+
+.habit-card{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1%;
+    width: 30%;
+    background-color: sandybrown;
+}
+
+.card-header{
+    width: 100%;
+    padding: 1em;
+    margin: 0px;
+    font-size: 1.25vw;
+}
+
+.record-list{
+    padding: 0em 1em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.record-quantity{
+    width: 14.28%;
+    font-size: 1vw;
+}
+
+.add-habit-button{
+    padding: 0% 1%;
+}
+
+.user-logout{
+
+}

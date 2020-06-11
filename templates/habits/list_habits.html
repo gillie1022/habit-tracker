@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Daily Habits</h2>
+<h2 class="page-title">Daily Habits</h2>
 
 <div id="deck" class="flex flex-wrap">
     {% for habit in habits %}
-        <a class="habit-card w-30 ma3 tc bg-washed-red no-underline" href="{% url 'show_habit' habit_pk=habit.pk %}"><h3>{{ habit }}</h3>
+        <a class="habit-card" href="{% url 'show_habit' habit_pk=habit.pk %}"><h3 class="card-header">{{ habit }}</h3><div class="record-list">
             {% for record in habit.records.all %}
-            <p>{{ record.quantity }}</p>
-            {% endfor %}
+            <p class="record-quantity">{{ record.quantity }}</p>
+            {% endfor %}</div>
 
         </a>
     {% endfor %}
 </div>
 
 <div>
-<a href="{% url 'add_habit' %}">Add a Habit</a>    
+<a href="{% url 'add_habit' %}" class="add-habit-button">Add a Habit</a>    
 </div>
 
 {% endblock %}
