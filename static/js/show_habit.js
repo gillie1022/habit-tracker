@@ -1,4 +1,4 @@
-records = document.querySelectorAll(".record");
+let records = document.querySelectorAll(".record");
 for (let record of records) {
   record.addEventListener("click", (event) => {
     event.preventDefault();

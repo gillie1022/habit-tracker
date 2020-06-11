@@ -1,21 +1,30 @@
-{% extends "base.html" %}
-
+{% extends "base.html" %} 
+{% load static %}
+{% block scripts %}
+<script src="{% static 'js/list_habit.js' %}" defer></script>
+{% endblock %}
 {% block content %}
 <h2 class="page-title">Daily Habits</h2>
 
-<div id="deck" class="flex flex-wrap">
-    {% for habit in habits %}
-        <a class="habit-card" href="{% url 'show_habit' habit_pk=habit.pk %}"><h3 class="card-header">{{ habit }}</h3><div class="record-list">
-            {% for record in habit.records.all %}
-            <p class="record-quantity">{{ record.quantity }}</p>
-            {% endfor %}</div>
-
-        </a>
-    {% endfor %}
+<div id="deck" class="">
+  {% for habit in habits %}
+  <a class="habit-card" href="{% url 'show_habit' habit_pk=habit.pk %}">
+    <div class="card-header">
+      <h3>{{ habit.action }}&nbsp;</h3>
+      <h3 class="goal-quantity">{{ habit.goal_quantity }}&nbsp;</h3>
+      <h3>{{ habit.unit_of_measure }} Per Day</h3></div>
+      <div class="record-list">
+        {% for record in habit.records.all %}
+        <p class="record-quantity">{{ record.quantity }}</p>
+        {% endfor %}
+      </div>
+    
+  </a>
+  {% endfor %}
 </div>
 
 <div>
-<a href="{% url 'add_habit' %}" class="add-habit-button">Add a Habit</a>    
+  <a href="{% url 'add_habit' %}" class="add-habit-button">Add a Habit</a>
 </div>
 
 {% endblock %}

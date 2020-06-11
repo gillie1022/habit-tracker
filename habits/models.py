@@ -36,7 +36,6 @@ class Habit(models.Model):
         return last_21_days
 
 
-
 class DailyRecord(models.Model):
     habit = models.ForeignKey(to=Habit,
                               on_delete=models.CASCADE,

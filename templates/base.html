@@ -14,7 +14,7 @@
 <body>
     <div>
         <header class="header">
-            <h1 ><a href="{% url 'homepage' %}" class="no-underline">Habit Tracker</a> </h1>
+            <h1 class="site-title"><a href="{% url 'homepage' %}" class="no-underline">Habit Tracker</a> </h1>
             {% if user.is_authenticated %}
             <div class="user-logout">
                 Hello, {{user.username}}!

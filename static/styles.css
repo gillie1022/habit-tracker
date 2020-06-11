@@ -5,7 +5,9 @@ body{
 .header{
     display: flex;
     padding: 0em 1%;
-    font-size: 2vw;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: solid 2px red;
 }
 
 .page-title{
@@ -13,12 +15,25 @@ body{
     font-size: 2vw;
 }
 
+.site-title{
+    font-size: 3vw;
+    margin: 1em 0em 0em;
+}
+
+#deck{
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .habit-card{
     display: flex;
     flex-wrap: wrap;
     margin: 1%;
-    width: 30%;
-    background-color: sandybrown;
+    width: 31%;
+    background-color: rgb(218, 245, 245);
+    border-radius: 1vw;
+    text-decoration: none;
 }
 
 .card-header{
@@ -26,6 +41,9 @@ body{
     padding: 1em;
     margin: 0px;
     font-size: 1.25vw;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
 }
 
 .record-list{
@@ -38,6 +56,7 @@ body{
 .record-quantity{
     width: 14.28%;
     font-size: 1vw;
+    text-align: center;
 }
 
 .add-habit-button{
