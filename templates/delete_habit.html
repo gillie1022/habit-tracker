@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Delete Habit</h2>
+<h2 class="page-title">Delete Habit</h2>
 
 <div>
-    <form action="{% url 'delete_habit' habit_pk=habit.pk %}" method="POST">
+    <form action="{% url 'delete_habit' habit_pk=habit.pk %}" method="POST" class="form" id="delete-form">
         {% csrf_token %}
-        <p>Are you sure you want to delete {{ habit }}?</p>
-        <div>
-            <button type="submit">Delete Habit</button><br />
-            <a href="{% url 'list_habits' %}">Cancel</a>
+        <p id="record-list">Are you sure you want to delete <a href="{% url 'show_habit' habit_pk=habit.pk %}" class="delete-a">{{ habit }}</a>?</p>
+        <div class="delete-buttons">
+            <button type="submit" class="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-red button-text">Delete Habit</button><br />
+            <a href="{% url 'list_habits' %}" class="f6 grow no-underline br-pill ph3 pv2 mb2 dib purple bg-white button-text">Cancel</a>
         </div>
     </form>
 </div>

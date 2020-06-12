@@ -1,68 +1,166 @@
-body{
-    margin: 1em 10%;
+body {
+  margin: 1em 10%;
+  font-family: 'Balsamiq Sans', cursive;
+  background-color: aliceblue;
 }
 
-.header{
+.button {
+  padding: 0% 1%;
+}
+
+.button-text{
+    font-size: 1vw;
+}
+
+.form{
+    background-color: rgb(77, 77, 77);
+    padding: 1% 2%;
+    border-radius: 1.5vw;
+    color: white;
+}
+
+.form p label{
+    display: block;
+}
+
+.form p input{
+    width: 100%;
+    padding: .5%;
+    border-radius: .75vw;
+}
+
+#delete-form{
+    margin: 0% 1% ;
+}
+
+.delete-a{
+    text-transform: capitalize;
+    color: white;
+}
+
+.delete-buttons{
     display: flex;
-    padding: 0em 1%;
+    width: 17%;
     justify-content: space-between;
-    align-items: flex-end;
-    border-bottom: solid 2px red;
 }
 
-.page-title{
-    padding: 0em 1%;
-    font-size: 2vw;
+#record-list{
+    font-size: 1.5vw;
+}
+.header {
+  display: flex;
+  padding: 0em 1%;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: solid 2px red;
+}
+.user-logout{
+    font-size: 1.5vw;
+    text-align: right;
+    padding-bottom: .5%;
 }
 
-.site-title{
-    font-size: 3vw;
-    margin: 1em 0em 0em;
-}
-
-#deck{
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.habit-card{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1%;
-    width: 31%;
-    background-color: rgb(218, 245, 245);
-    border-radius: 1vw;
+.user-logout a{
     text-decoration: none;
 }
-
-.card-header{
-    width: 100%;
-    padding: 1em;
-    margin: 0px;
-    font-size: 1.25vw;
-    text-transform: capitalize;
-    display: flex;
-    justify-content: center;
+.page-title {
+  padding: 0em 1%;
+  font-size: 2vw;
+  text-transform: capitalize;
 }
 
-.record-list{
-    padding: 0em 1em;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+.site-title {
+  font-size: 3vw;
+  margin: 1em 0em 0em;
 }
 
-.record-quantity{
-    width: 14.28%;
-    font-size: 1vw;
-    text-align: center;
+#deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between left;
 }
 
-.add-habit-button{
-    padding: 0% 1%;
+.habit-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding-bottom: 1%;
+  margin: 1%;
+  width: 31.33%;
+  background-color: rgb(77, 77, 77);
+  border-radius: 1vw;
+  text-decoration: none;
 }
 
-.user-logout{
-
+.card-header {
+  color: white;
+  width: 100%;
+  padding: 1em;
+  margin: 0px;
+  font-size: 1.25vw;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
 }
+
+.record-list {
+  padding: 0em 1em;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.record-quantity {
+  width: 14.28%;
+  font-size: 1vw;
+  text-align: center;
+  margin: 0px;
+}
+
+.Y {
+  width: 14.28%;
+  font-size: 1.25vw;
+  text-align: center;
+  margin: 0px;
+}
+
+.Y p {
+  background-color: springgreen;
+  border-radius: 50%;
+  padding: 0.5em;
+  margin: 0.25em;
+  color: rgb(77, 77, 77);
+}
+
+.X {
+  width: 14.28%;
+  font-size: 1.25vw;
+  text-align: center;
+  margin: 0px;
+}
+
+.X p {
+  background-color: rgb(255, 0, 0);
+  padding: 0.5em;
+  margin: 0.25em;
+  color: rgb(77, 77, 77);
+}
+
+.U {
+  width: 14.28%;
+  font-size: 1.25vw;
+  text-align: center;
+  margin: 0px;
+}
+
+.U p {
+  background-color: rgb(255, 255, 0);
+  border-radius: 25%;
+  padding: 0.5em;
+  margin: 0.25em;
+  color: rgb(77, 77, 77);
+}
+.add-habit-button {
+  padding: 0% 1%;
+}
+

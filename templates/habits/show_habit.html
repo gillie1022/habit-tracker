@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% load static %} {% block scripts %}
 <script src="{% static 'js/show_habit.js' %}" defer></script>
 {% endblock %} {% block content %}
-<h2>{{ habit }}</h2>
+<h2 class="page-title">{{ habit }}</h2>
 <ul id="record-list">
   {% for record in habit.get_last_21_days %}
   <div data-quantity="{{ record.quantity }}">
@@ -17,19 +17,15 @@
       method="POST"
     >
       {% csrf_token %} {{ record_form.as_p }}
-      <div><button type="submit">Save Changes</button></div>
+      <div><button type="submit" class="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-purple button-text">Save Changes</button></div>
     </form>
   </div>
   {% endfor %}
 </ul>
-<div>
+<div class="button">
   <p>
-    <a href="{% url 'delete_habit' habit_pk=habit.pk %}">Delete Habit</a>
+    <a href="{% url 'delete_habit' habit_pk=habit.pk %}" class="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-red button-text" >Delete Habit</a>
   </p>
 </div>
-<div>
-  <p>
-    <a href="{% url 'list_habits' %}">Return to Habit List</a>
-  </p>
-</div>
+
 {% endblock %}
