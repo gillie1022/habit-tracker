@@ -13,7 +13,7 @@ def homepage(request):
 @login_required
 def list_habits(request):
     your_habits = request.user.habits.all()
-    return render(request, "habits/list_habits.html", {"habits": your_habits})
+    return render(request, "habits/list_habits.html", {"habits": your_habits,})
 
 @login_required
 def show_habit(request, habit_pk):
